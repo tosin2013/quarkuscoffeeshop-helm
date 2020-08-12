@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  quarkus-helm-chart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-08-12T16:18:14.664572221Z"
+    description: A Helm chart for Kubernetes
+    digest: ad5bffec462b3aefbf002bb7b24605bd188648275ef89bd38602e91b19b9dc2a
+    name: quarkus-helm-chart
+    type: application
+    urls:
+    - https://github.com/tosin2013/quarkus-cafe-helm-chart/releases/download/quarkus-helm-chart-0.1.1/quarkus-helm-chart-0.1.1.tgz
+    version: 0.1.1
+generated: "2020-08-12T16:18:14.57369824Z"
