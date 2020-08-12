@@ -3,7 +3,7 @@ name: Lint and Test Charts
 on:
   push:
     branches:
-      - 'quarkus-helm-chart/**'
+      - 'gh-pages/**'
     paths:
       - 'charts/**'
   pull_request:
