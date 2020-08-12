@@ -1,8 +1,5 @@
 helm-extra-args: --timeout 600
 check-version-increment: true
 debug: true
-<<<<<<< HEAD
-=======
 remote: origin
 target-branch: gh-pages
->>>>>>> gh-pages
