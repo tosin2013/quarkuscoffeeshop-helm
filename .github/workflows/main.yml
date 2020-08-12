@@ -2,22 +2,24 @@ name: Lint and Test Charts
 
 on:
   push:
-    branches:
-      - 'gh-pages/**'
     paths:
-      - 'charts/**'
-  pull_request:
-    paths:
-      - 'charts/**'
+    - 'quarkus-helm-chart/**'
 
 jobs:
   lint-chart:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+      - name: Show path
+        run: |
+          ls -lath .
+          pwd
+          cd quarkus-helm-chart
       - name: Run chart-testing (lint)
-        uses: helm/chart-testing-action@master
+        uses: helm/chart-testing-action@v1.0.0
         with:
           command: lint
           config: .github/ct.yaml

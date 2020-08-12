@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'charts/**'
+      - 'quarkus-helm-chart/**'
 
 jobs:
   release:
