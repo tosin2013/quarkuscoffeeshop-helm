@@ -1,14 +1,6 @@
 name: Lint and Test Charts
 
-on:
-  push:
-    branches:
-      - 'gh-pages'
-    paths:
-      - 'quarkus-helm-chart/**'
-  pull_request:
-    paths:
-      - 'quarkus-helm-chart/**'
+on: [push]
 
 jobs:
   lint-chart:
