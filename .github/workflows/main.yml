@@ -5,10 +5,10 @@ on:
     branches:
       - 'gh-pages'
     paths:
-      - 'charts/**'
+      - 'quarkus-helm-chart/**'
   pull_request:
     paths:
-      - 'charts/**'
+      - 'quarkus-helm-chart/**'
 
 jobs:
   lint-chart:
