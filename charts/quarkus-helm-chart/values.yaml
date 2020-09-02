@@ -2,10 +2,18 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Quarkus Cafe Application Variables
 projectnamespace: quarkus-cafe-demo
 domain: ocp4.example.com
 kafka_cluster_name: cafe-cluster
+version:
+  barista: 2.4.0
+  core: 2.4.0
+  customermocker: 2.3.0
+  kitchen: 2.4.0
+  web: 2.4.0
 
+# Helm chart variables
 Release:
   Name: quarkus-cafe-deployment
   release-namespace: quarkus-cafe-demo
