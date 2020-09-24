@@ -38,16 +38,16 @@ work in progress
 ## Developer Tasks 
 **cd into support/helm-deployment**
 
-**Update the default values found in quarkus-helm-chart/values.yaml** 
+**Update the default values found in quarkuscoffeeshop-charts/values.yaml** 
 
 **Test Install quarkus application**
 ```
-helm install quarkus-cafe-deployment quarkus-helm-chart/ --values quarkus-helm-chart/values.yaml --dry-run
+helm install quarkus-cafe-deployment quarkuscoffeeshop-charts/ --values quarkuscoffeeshop-charts/values.yaml --dry-run
 ```
 
 **Install quarkus application**
 ```
-helm install quarkus-cafe-deployment quarkus-helm-chart/ --values quarkus-helm-chart/values.yaml 
+helm install quarkus-cafe-deployment quarkuscoffeeshop-charts/ --values quarkuscoffeeshop-charts/values.yaml 
 ```
 **Uninstall quarkus application**
 ```
