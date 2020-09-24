@@ -4,7 +4,7 @@ set -euo pipefail
 ls -R charts/
 pwd
 
-CHART_DIRS="/home/runner/work/quarkuscoffeeshop-helm/quarkuscoffeeshop-helm/charts/quarkuscoffeshop-helm"
+CHART_DIRS="/home/runner/work/quarkuscoffeeshop-helm/quarkuscoffeeshop-helm/charts/quarkuscoffeshop-charts"
 KUBEVAL_VERSION="0.15.0"
 SCHEMA_LOCATION="https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/"
 REPO_PATH="gh-pages"
