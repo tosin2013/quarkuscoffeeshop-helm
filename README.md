@@ -1,4 +1,7 @@
 # Deploy Quarkus Cafe Using a helm chart
+![Lint and Test Charts](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/workflows/Lint%20and%20Test%20Charts/badge.svg?branch=gh-pages)
+![Release Charts](https://github.com/quarkuscoffeeshop/quarkuscoffeeshop-helm/workflows/Release%20Charts/badge.svg?branch=gh-pages)
+
 
 ## Administrator Tasks 
     
