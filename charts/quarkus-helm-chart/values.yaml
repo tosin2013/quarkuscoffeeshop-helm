@@ -3,20 +3,20 @@
 # Declare variables to be passed into your templates.
 
 # Quarkus Cafe Application Variables
-projectnamespace: quarkus-cafe-demo
-domain: ocp4.example.com
+projectnamespace: <<NAMESPACE>>
+domain: <<DOMAIN>>
 kafka_cluster_name: cafe-cluster
 version:
-  barista: 2.4.0
-  core: 2.4.0
-  customermocker: 2.3.0
-  kitchen: 2.4.0
-  web: 2.4.0
+  barista: 3.0.0
+  core: 3.0.0
+  customermocker: 3.0.1
+  kitchen: 3.0.0
+  web: 3.0.0
 
 # Helm chart variables
 Release:
-  Name: quarkus-cafe-deployment
-  release-namespace: quarkus-cafe-demo
+  Name: quarkuscoffeeshop-deployment
+  release-namespace: <<NAMESPACE>>
 
 replicaCount: 1
 
