@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-ls charts/
+ls -R charts/
 pwd
 
 CHART_DIRS="charts/quarkuscoffeshop-helm"
