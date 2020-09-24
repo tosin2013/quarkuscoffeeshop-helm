@@ -1,7 +1,7 @@
 #!/bin/bash
 set -exuo pipefail
 
-ls -R charts/quarkuscoffeshop-charts
+ls -R .
 
 
 CHART_DIRS="charts/quarkuscoffeshop-charts"
