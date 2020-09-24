@@ -13,7 +13,7 @@ $ chmod 700 get_helm.sh
 $ ./get_helm.sh
 ```
 
-### OpenShift 4.x Instructions 
+### OpenShiftt 4.x  DeploymenInstructions 
 
 **Login to OpenShift and create project**
 ```
@@ -22,6 +22,45 @@ oc new-project <<NAMESPACE>
 
 **Run ansible playbook to install Red Hat AMQ and mongodb on target cluster**
 * [admin-tasks](admin-tasks/README.md)
+
+
+**Add the Quarkus Coffee Shop  Helm Chart repository**
+```
+helm repo add quarkuscoffeeshop https://quarkuscoffeeshop.github.io/quarkuscoffeeshop-helm/
+```
+
+**Check helm repo**
+```
+$ helm repo list
+NAME             	URL
+quarkuscoffeeshop	https://quarkuscoffeeshop.github.io/quarkuscoffeeshop-helm/
+```
+
+**Configure values.yml**
+```
+cat >values.yml<<EOF
+# Quarkus Cafe Application Variables
+projectnamespace: <<NAMESPACE>>
+domain: <<DOMAIN>>
+kafka_cluster_name: cafe-cluster
+version:
+  barista: 3.0.0
+  core: 3.0.0
+  customermocker: 3.0.1
+  kitchen: 3.0.0
+  web: 3.0.0
+
+# Helm chart variables
+Release:
+  Name: quarkuscoffeeshop-deployment
+  release-namespace: <<NAMESPACE>>
+EOF
+
+**Deploy the Cluster Operator using the Helm command line tool**
+```
+helm install strimzi/strimzi-kafka-operator
+```
+
 
 
 ### Kubernertes Cluster Instructions - WIP
