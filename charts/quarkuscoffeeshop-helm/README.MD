@@ -21,6 +21,13 @@ oc new-project quarkus-cafe-demo
 
 ### Kubernertes Cluster Instructions - WIP
 
+**Add the Quarkuscoffeeshop Helm Chart repository**
+```
+helm repo add quarkuscoffeeshop https://quarkuscoffeeshop.github.io/quarkuscoffeeshop-helm/
+```
+
+Use 
+
 **Add the Strimzi Helm Chart repository**
 ```
 helm repo add strimzi https://strimzi.io/charts/
