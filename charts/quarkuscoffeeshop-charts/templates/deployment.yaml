@@ -63,7 +63,7 @@ spec:
     spec:
       containers:
         - name: quarkuscoffeeshop-counter
-          image: jeremydavis/quarkuscoffeeshop-counter:{{ .Values.version.core }}
+          image: jeremydavis/quarkuscoffeeshop-counter:{{ .Values.version.counter }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
