@@ -12,6 +12,9 @@ version:
   customermocker: 3.1.0
   kitchen: 3.1.0
   web: 3.1.0
+mongodb_url: mongodb://mongodb:mongodb@mongodb:27017/cafedb
+mongodb_username: mongodb
+mongodb_password: mongodb
 
 # Helm chart variables
 Release:

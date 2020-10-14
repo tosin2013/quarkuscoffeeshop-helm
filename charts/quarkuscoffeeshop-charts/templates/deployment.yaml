@@ -74,11 +74,11 @@ spec:
             - name: MONGO_DB
               value: cafedb
             - name: MONGO_URL
-              value: mongodb://mongodb:mongodb@mongodb:27017/cafedb
+              value: {{ .Values.mongodb_url }}
             - name: MONGO_USERNAME
-              value: mongodb
+              value: {{ .Values.mongodb_username }}
             - name: MONGO_PASSWORD
-              value: mongodb
+              value: {{ .Values.mongodb_password }}
 ---
 apiVersion: apps/v1
 kind: Deployment
