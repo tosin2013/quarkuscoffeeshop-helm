@@ -7,9 +7,9 @@ projectnamespace: <<NAMESPACE>>
 domain: <<DOMAIN>>
 kafka_cluster_name: cafe-cluster
 version:
-  barista: 3.1.0
+  barista: 3.0.0
   counter: 3.1.0
-  customermocker: 3.1.0
+  customermocker: 3.0.1
   kitchen: 3.1.0
   web: 3.1.0
 mongodb_url: mongodb://mongodb:mongodb@mongodb:27017/cafedb
