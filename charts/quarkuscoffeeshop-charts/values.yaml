@@ -3,23 +3,23 @@
 # Declare variables to be passed into your templates.
 
 # Quarkus Cafe Application Variables
-projectnamespace: <<NAMESPACE>>
-domain: <<DOMAIN>>
+projectnamespace: quarkuscoffeeshop-demo
+domain: cluster-3bd4.3bd4.example.opentlc.com
 kafka_cluster_name: cafe-cluster
 version:
-  barista: 3.0.0
-  counter: 3.1.0
-  customermocker: 3.0.1
-  kitchen: 3.1.0
-  web: 3.1.0
-mongodb_url: mongodb://mongodb:mongodb@mongodb:27017/cafedb
+  barista: 3.2.0
+  counter: 3.2.0
+  customermocker: 3.2.0
+  kitchen: 3.2.0
+  web: 3.2.1
+mongodb_url: mongodb://mongodb:mongodb+srv@quarkus-coffeeshop-replica-set-0.quarkus-coffeeshop-replica-set-svc.quarkuscoffeeshop-demo.svc.cluster.local:27017,quarkus-coffeeshop-replica-set-1.quarkus-coffeeshop-replica-set-svc.quarkuscoffeeshop-demo.svc.cluster.local:27017,quarkus-coffeeshop-replica-set-2.quarkus-coffeeshop-replica-set-svc.quarkuscoffeeshop-demo.svc.cluster.local:27017/cafedb?replicaSet=quarkus-coffeeshop-replica-set #mongodb://mongodb:mongodb@mongodb:27017/cafedb
 mongodb_username: mongodb
 mongodb_password: mongodb
 
 # Helm chart variables
 Release:
   Name: quarkuscoffeeshop-deployment
-  release-namespace: <<NAMESPACE>>
+  release-namespace: quarkuscoffeeshop-demo
 
 replicaCount: 1
 
