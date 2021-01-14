@@ -71,14 +71,18 @@ spec:
           env:
             - name: KAFKA_BOOTSTRAP_URLS
               value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
-            - name: MONGO_DB
-              value: cafedb
-            - name: MONGO_URL
-              value: {{ .Values.mongodb_url }}
-            - name: MONGO_USERNAME
-              value: {{ .Values.mongodb_username }}
-            - name: MONGO_PASSWORD
-              value: {{ .Values.mongodb_password }}
+            - name: PGSQL_URL
+              value: {{ .Values.pgsql_url }}
+            - name: PGSQL_USER
+              value: {{ .Values.pgsql_username }}
+            - name: PGSQL_PASS
+              value: {{ .Values.pgsql_password }}
+            - name: LOG_SQL
+              value: {{ .Values.pgsql_password }}
+            - name: QUARKUS_LOG_LEVEL
+              value: {{ .Values.pgsql_password }}
+            - name: QUARKUSCOFFEESHOP_LOG_LEVEL
+              value: {{ .Values.pgsql_password }}
 ---
 apiVersion: apps/v1
 kind: Deployment

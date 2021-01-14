@@ -12,9 +12,12 @@ version:
   customermocker:  4.1.0
   kitchen:  4.1.0
   web:  4.1.0
-mongodb_url: mongodb://mongodb:mongodb+srv@quarkus-coffeeshop-replica-set-0.quarkus-coffeeshop-replica-set-svc.quarkuscoffeeshop-demo.svc.cluster.local:27017,quarkus-coffeeshop-replica-set-1.quarkus-coffeeshop-replica-set-svc.quarkuscoffeeshop-demo.svc.cluster.local:27017,quarkus-coffeeshop-replica-set-2.quarkus-coffeeshop-replica-set-svc.quarkuscoffeeshop-demo.svc.cluster.local:27017/cafedb?replicaSet=quarkus-coffeeshop-replica-set #mongodb://mongodb:mongodb@mongodb:27017/cafedb
-mongodb_username: mongodb
-mongodb_password: mongodb
+pgsql_url: 
+pgsql_user: mongodb
+pgsql_pass: mongodb
+log_sql: true
+quarkus_log_level: INFO
+quarkuscoffeeshop_log_level: DEBUG
 
 # Helm chart variables
 Release:
