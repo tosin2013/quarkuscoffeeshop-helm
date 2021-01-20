@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         - name: quarkuscoffeeshop-barista
-          image: jeremydavis/quarkuscoffeeshop-barista:{{ .Values.version.barista }}
+          image: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-barista:{{ .Values.version.barista }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8778
@@ -63,22 +63,26 @@ spec:
     spec:
       containers:
         - name: quarkuscoffeeshop-counter
-          image: jeremydavis/quarkuscoffeeshop-counter:{{ .Values.version.counter }}
+          image: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-counter:{{ .Values.version.counter }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
               protocol: TCP
           env:
             - name: KAFKA_BOOTSTRAP_URLS
-              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
-            - name: MONGO_DB
-              value: cafedb
-            - name: MONGO_URL
-              value: {{ .Values.mongodb_url }}
-            - name: MONGO_USERNAME
-              value: {{ .Values.mongodb_username }}
-            - name: MONGO_PASSWORD
-              value: {{ .Values.mongodb_password }}
+              value: 'cafe-cluster-kafka-bootstrap:9092'
+            - name: PGSQL_URL
+              value: {{ .Values.pgsql_url }}
+            - name: PGSQL_USER
+              value: {{ .Values.pgsql_username }}
+            - name: PGSQL_PASS
+              value: {{ .Values.pgsql_password }}
+            - name: LOG_SQL
+              value: 'true'
+            - name: QUARKUS_LOG_LEVEL
+              value: {{ .Values.quarkus_log_level }}
+            - name: QUARKUSCOFFEESHOP_LOG_LEVEL
+              value: {{ .Values.quarkuscoffeeshop_log_level }}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -143,7 +147,7 @@ spec:
     spec:
       containers:
         - name: quarkuscoffeeshop-kitchen
-          image: jeremydavis/quarkuscoffeeshop-kitchen:{{ .Values.version.kitchen }}
+          image: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-kitchen:{{ .Values.version.kitchen }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
@@ -179,7 +183,7 @@ spec:
     spec:
       containers:
         - name: quarkuscoffeeshop-web
-          image: jeremydavis/quarkuscoffeeshop-web:{{ .Values.version.web }}
+          image: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-web:{{ .Values.version.web }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080
@@ -193,3 +197,5 @@ spec:
               value:  http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}/dashboard/stream
             - name: CORS_ORIGINS
               value: http://{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}
+            - name: STORE_ID
+              value: {{ .Values.storeid }}
