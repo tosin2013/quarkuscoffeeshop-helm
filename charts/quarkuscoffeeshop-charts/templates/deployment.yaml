@@ -149,7 +149,7 @@ spec:
     spec:
       containers:
         - name: quarkuscoffeeshop-customermocker
-          image: jeremydavis/quarkuscoffeeshop-customermocker:{{ .Values.version.customermocker }}
+          image: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-customermocker:{{ .Values.version.customermocker }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 8080

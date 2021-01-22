@@ -9,7 +9,7 @@ kafka_cluster_name: cafe-cluster
 version:
   barista:  5.0.0-SNAPSHOT
   counter:  5.0.1-SNAPSHOT
-  customermocker:  3.0.1
+  customermocker:  5.0.1-SNAPSHOT
   inventory: 5.0.0-SNAPSHOT
   kitchen:  5.0.0-SNAPSHOT
   web:  5.0.1-SNAPSHOT
