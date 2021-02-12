@@ -12,7 +12,7 @@ version:
   customermocker:  5.0.1-SNAPSHOT
   inventory: 5.0.0-SNAPSHOT
   kitchen:  5.0.0-SNAPSHOT
-  web:  5.0.1-SNAPSHOT
+  web:  5.0.3-SNAPSHOT
 pgsql_url: 'jdbc:postgresql://coffeeshopdb:5432/coffeeshopdb?currentSchema=coffeeshop'
 pgsql_username: coffeshopadmin
 pgsql_password: 'changepassword'

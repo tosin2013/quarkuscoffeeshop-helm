@@ -233,6 +233,8 @@ spec:
               value: http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}
             - name: STREAM_URL
               value:  http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}/dashboard/stream
+            - name: LOYALTY_STREAM_URL
+              value: http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}/dashboard/loyaltystream
             - name: CORS_ORIGINS
               value: http://{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}
             - name: STORE_ID
