@@ -7,7 +7,7 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replica_count.barista }}
   selector:
     matchLabels:
       app: quarkuscoffeeshop-barista
@@ -45,7 +45,7 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replica_count.inventory }}
   selector:
     matchLabels:
       app: quarkuscoffeeshop-inventory
@@ -83,7 +83,7 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replica_count.counter }}
   selector:
     matchLabels:
       app: quarkuscoffeeshop-counter
@@ -131,7 +131,7 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replica_count.customermocker }}
   selector:
     matchLabels:
       app: quarkuscoffeeshop-customermocker
@@ -167,7 +167,7 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replica_count.kitchen }}
   selector:
     matchLabels:
       app: quarkuscoffeeshop-kitchen
@@ -203,7 +203,7 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replica_count.web }}
   selector:
     matchLabels:
       app: quarkuscoffeeshop-web
