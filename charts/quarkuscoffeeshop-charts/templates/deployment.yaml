@@ -229,8 +229,8 @@ spec:
           env:
             - name: KAFKA_BOOTSTRAP_URLS
               value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
-             - name: QUARKUS_LOG_LEVEL
-               value: {{ .Values.quarkus_log_level }}
+            - name: QUARKUS_LOG_LEVEL
+              value: {{ .Values.quarkus_log_level }}
 ---
 apiVersion: apps/v1
 kind: Deployment
