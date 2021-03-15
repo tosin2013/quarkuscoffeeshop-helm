@@ -197,6 +197,44 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: quarkuscoffeeshop-customerloyalty
+  labels:
+    app: quarkuscoffeeshop-customerloyalty
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.replica_count.customerloyalty }}
+  selector:
+    matchLabels:
+      app: quarkuscoffeeshop-customerloyalty
+  template:
+    metadata:
+      name: quarkuscoffeeshop-customerloyalty-deployment
+      labels:
+        app:  quarkuscoffeeshop-customerloyalty
+        release: {{ .Release.Name }}
+        app.kubernetes.io/component: quarkuscoffeeshop-customerloyalty
+        app.kubernetes.io/instance: quarkuscoffeeshop-customerloyalty
+        app.kubernetes.io/part-of: quarkus-cafe
+        quarkus-cafe: ""
+        app.openshift.io/runtime-namespace: {{ .Values.projectnamespace }}
+    spec:
+      containers:
+        - name: quarkuscoffeeshop-customerloyalty
+          image: quay.io/quarkuscoffeeshop/quarkuscoffeeshop-customerloyalty:{{ .Values.version.customerloyalty }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: KAFKA_BOOTSTRAP_URLS
+              value: {{ .Values.kafka_cluster_name }}-kafka-bootstrap:9092
+             - name: QUARKUS_LOG_LEVEL
+               value: {{ .Values.quarkus_log_level }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: quarkuscoffeshop-web
   labels:
     app: quarkuscoffeeshop-web
@@ -236,6 +274,6 @@ spec:
             - name: LOYALTY_STREAM_URL
               value: http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}/dashboard/loyaltystream
             - name: CORS_ORIGINS
-              value: http://{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}
+              value: http://quarkuscoffeeshop-web-{{ .Values.projectnamespace }}.apps.{{ .Values.domain }}
             - name: STORE_ID
               value: {{ .Values.storeid }}
