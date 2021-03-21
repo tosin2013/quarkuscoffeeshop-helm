@@ -1,22 +1,39 @@
-# Default values for quarkus-helm-chart.
+# Default values for quarkuscoffeeshop-charts.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
 # Quarkus Cafe Application Variables
-projectnamespace: quarkus-cafe-demo
+projectnamespace: quarkuscoffeeshop-demo
 domain: ocp4.example.com
 kafka_cluster_name: cafe-cluster
 version:
-  barista: 2.4.0
-  core: 2.4.0
-  customermocker: 2.3.0
-  kitchen: 2.4.0
-  web: 2.4.0
+  barista:  5.0.0-SNAPSHOT
+  counter:  5.0.3-SNAPSHOT
+  customermocker:  5.0.1-SNAPSHOT
+  inventory: 5.0.0-SNAPSHOT
+  kitchen:  5.0.0-SNAPSHOT
+  customerloyalty: 5.0.1-SNAPSHOT
+  web:  5.0.3-SNAPSHOT
+replica_count:
+  barista: 1
+  counter: 1
+  customermocker: 1
+  inventory: 1
+  customerloyalty: 1
+  kitchen: 1
+  web: 1
+pgsql_url: 'jdbc:postgresql://coffeeshopdb:5432/coffeeshopdb?currentSchema=coffeeshop'
+pgsql_username: coffeshopadmin
+pgsql_password: 'changepassword'
+storeid: ATLANTA
+quarkus_log_level: INFO
+quarkuscoffeeshop_log_level: DEBUG
+
 
 # Helm chart variables
 Release:
-  Name: quarkus-cafe-deployment
-  release-namespace: quarkus-cafe-demo
+  Name: quarkuscoffeeshop-deployment
+  release-namespace: quarkuscoffeeshop-demo
 
 replicaCount: 1
 
